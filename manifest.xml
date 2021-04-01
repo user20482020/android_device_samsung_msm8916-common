@@ -198,6 +198,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+<!-- vibrator hwbinder causes to get stuck at bootanimation in previous releases
     <hal format="hidl">
         <name>android.hardware.vibrator</name>
         <transport>hwbinder</transport>
@@ -207,6 +208,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+-->
     <hal format="hidl">
         <name>android.hardware.wifi.offload</name>
         <transport>hwbinder</transport>
