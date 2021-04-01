@@ -45,6 +45,7 @@
             <instance>legacy/0</instance>
         </interface>
     </hal>
+<!-- RT need to remove configstore otherwise device won't even start bootanimation
     <hal format="hidl">
         <name>android.hardware.configstore</name>
         <transport>hwbinder</transport>
@@ -54,6 +55,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+-->
     <hal format="hidl">
         <name>android.hardware.drm</name>
         <transport>hwbinder</transport>
