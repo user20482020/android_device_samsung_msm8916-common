@@ -179,11 +179,15 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0 \
     android.hidl.manager@1.0-java
 
+#vndservicemanager needed to boot otherwise
+#init: Command 'start vndservicemanager' action=init (/system/etc/init/hw/init.rc:397) took 0ms and failed: service vndservicemanager not found
+#it gets stuck at bootanimation without vndservicemanager
 PRODUCT_PACKAGES += \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
-    libhwbinder.vendor
+    libhwbinder.vendor \
+    vndservicemanager
 
 # Keylayout
 PRODUCT_COPY_FILES += \
