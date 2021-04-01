@@ -104,7 +104,7 @@ DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
-# memfd - needed otherwise you get crashes like Jit thread pool  >>> system_server <<<
+# Enable memfd - needed otherwise you get crashes like Jit thread pool  >>> system_server <<<
 TARGET_HAS_MEMFD_BACKPORT := true
 
 # Init
