@@ -111,6 +111,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+<!-- no IR on tablet
     <hal format="hidl">
         <name>android.hardware.ir</name>
         <transport arch="32">passthrough</transport>
@@ -120,6 +121,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+-->
     <hal format="hidl">
         <name>android.hardware.light</name>
         <transport>hwbinder</transport>
