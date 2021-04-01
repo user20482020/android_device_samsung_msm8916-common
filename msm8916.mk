@@ -314,10 +314,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # Sensor HAL
+# RT sensor needs to be passthrough and sensors.msm8916 needs to be removed in order to work
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service \
-    sensors.msm8916
+    android.hardware.sensors@1.0-impl
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
