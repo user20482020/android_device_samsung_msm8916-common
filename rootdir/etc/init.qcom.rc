@@ -114,7 +114,7 @@ on boot
     chown radio bluetooth /efs/bluetooth/bt_addr
     chmod 0755 /efs/bluetooth/bt_addr
 
-    # Permissions for bluetooth
+    # old Permissions for bluetooth
 #    chown bluetooth net_bt_stack ro.bt.bdaddr_path
 #    chown radio bluetooth /efs/bluetooth/bt_addr
 #    chmod 0755 /efs/bluetooth/bt_addr
