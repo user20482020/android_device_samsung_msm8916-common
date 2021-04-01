@@ -153,6 +153,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+<!-- no radio on tablet
     <hal format="hidl">
         <name>android.hardware.radio</name>
         <transport>hwbinder</transport>
@@ -178,6 +179,7 @@
             <instance>slot2</instance>
         </interface>
     </hal>
+-->
     <hal format="hidl">
         <name>android.hardware.renderscript</name>
         <transport arch="32">passthrough</transport>
