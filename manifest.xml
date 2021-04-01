@@ -245,6 +245,7 @@
         </interface>
     </hal>
 -->
+<!-- tablet's don't have nfc
     <hal format="hidl">
         <name>vendor.nxp.nxpnfc</name>
         <transport>hwbinder</transport>
@@ -254,6 +255,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+-->
     <hal format="hidl">
         <name>vendor.qti.hardware.cryptfshw</name>
         <transport>hwbinder</transport>
