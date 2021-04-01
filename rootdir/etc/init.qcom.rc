@@ -108,8 +108,17 @@ on boot
     # for BT MAC address
     mkdir /efs/bluetooth 0775 radio system
     # if already exist
-    chown radio system /efs/bluetooth
-    chmod 0775 /efs/bluetooth
+#    chown radio system /efs/bluetooth
+#    chmod 0775 /efs/bluetooth
+    chown bluetooth bluetooth ro.bt.bdaddr_path
+    chown radio bluetooth /efs/bluetooth/bt_addr
+    chmod 0755 /efs/bluetooth/bt_addr
+
+    # Permissions for bluetooth
+#    chown bluetooth net_bt_stack ro.bt.bdaddr_path
+#    chown radio bluetooth /efs/bluetooth/bt_addr
+#    chmod 0755 /efs/bluetooth/bt_addr
+#    restorecon_recursive /efs/bluetooth
 
     #Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
