@@ -102,6 +102,9 @@ DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 
+# memfd - needed otherwise you get crashes like Jit thread pool  >>> system_server <<<
+TARGET_HAS_MEMFD_BACKPORT := true
+
 # Init
 TARGET_INIT_VENDOR_LIB ?= //$(COMMON_PATH):libinit_msm8916
 TARGET_RECOVERY_DEVICE_MODULES ?= libinit_msm8916
