@@ -189,9 +189,10 @@
             <instance>default</instance>
         </interface>
     </hal>
+<!-- sensors need to be passthrough in order to work in 18.1 -->
     <hal format="hidl">
         <name>android.hardware.sensors</name>
-        <transport>hwbinder</transport>
+        <transport arch="32">passthrough</transport>
         <version>1.0</version>
         <interface>
             <name>ISensors</name>
