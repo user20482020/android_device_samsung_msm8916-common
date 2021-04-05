@@ -135,10 +135,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
 
-# FM
-PRODUCT_PACKAGES += \
-    qcom.fmradio \
-    FMRadio
+# FM - remove FM as Samsung Tab A/E tablets don't have LTE chipset
+#PRODUCT_PACKAGES += \
+#    qcom.fmradio \
+#    FMRadio
 
 # For config.fs
 PRODUCT_PACKAGES += \

@@ -96,10 +96,10 @@ TARGET_USERIMAGES_USE_F2FS := true
 BOARD_ROOT_EXTRA_FOLDERS := firmware firmware-modem persist efs
 BOARD_ROOT_EXTRA_SYMLINKS := /data/tombstones:/tombstones
 
-# FM
-AUDIO_FEATURE_ENABLED_FM := true
-BOARD_HAVE_QCOM_FM := true
-AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
+# FM - remove FM as Samsung Tab A/E tablets don't have LTE chipset
+#AUDIO_FEATURE_ENABLED_FM := true
+#BOARD_HAVE_QCOM_FM := true
+#AUDIO_FEATURE_ENABLED_FM_POWER_OPT := true
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
