@@ -34,9 +34,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ld.config.txt:$(TARGET_COPY_OUT_SYSTEM)/etc/swcodec/ld.config.txt
 
 # Audio
+# RT - SM-T355 like SM-T350 needs audio 2.0 otherwise it gets stuck at boot animation with audioserver crashing
+# needs android.hardware.audio.service otherwise it crashes at bootanimation
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl \
-    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio.effect@2.0-impl \
     android.hardware.audio.service \
     audio.a2dp.default \
     audio.bluetooth.default \
@@ -53,10 +55,11 @@ PRODUCT_PACKAGES += \
     libtinycompress
 
 # Audio configuration file
+# Remove     frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
+# because we need to use custom ad2p for audio over bluetooth on SM-T350
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
@@ -72,10 +75,11 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service \
+    android.hardware.bluetooth@1.0-service
 
-PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.audio@2.0-impl \
+# This has to be removed in order for audio over bluetooth to work
+#PRODUCT_PACKAGES += \
+#    android.hardware.bluetooth.audio@2.0-impl
 
 PRODUCT_PACKAGES += \
     libbase_shim \
@@ -85,9 +89,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
 
 # Camera
+# Remove android.hardware.camera.provider@2.4-service \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service \
     libcamera_shim \
     camera.msm8916 \
     Snap
@@ -274,11 +278,11 @@ PRODUCT_PACKAGES += \
 include $(LOCAL_PATH)/prop.mk
 
 # Radio
-#PRODUCT_PACKAGES += \
-#    librmnetctl \
-#    libshim_secril \
-#    libxml2 \
-#    macloader
+PRODUCT_PACKAGES += \
+    librmnetctl \
+    libshim_secril \
+    libxml2 \
+    macloader
 
 # Rootdir
 PRODUCT_PACKAGES += \

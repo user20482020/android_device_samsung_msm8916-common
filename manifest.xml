@@ -1,8 +1,9 @@
 <manifest version="1.0" type="device" target-level="legacy">
+<!-- RT - SM-T355 like SM-T350 needs audio 2.0 otherwise it gets stuck at boot animation with audioserver crashing -->
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
-        <version>6.0</version>
+        <version>2.0</version>
         <interface>
             <name>IDevicesFactory</name>
             <instance>default</instance>
@@ -11,7 +12,7 @@
     <hal format="hidl">
         <name>android.hardware.audio.effect</name>
         <transport>hwbinder</transport>
-        <version>6.0</version>
+        <version>2.0</version>
         <interface>
             <name>IEffectsFactory</name>
             <instance>default</instance>
@@ -26,6 +27,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+<!-- not needed for audio over bluetooth to work on SM-T355 and SM-T350
     <hal format="hidl">
         <name>android.hardware.bluetooth.audio</name>
         <transport>hwbinder</transport>
@@ -36,9 +38,10 @@
         </interface>
         <fqname>@2.0::IBluetoothAudioProvidersFactory/default</fqname>
     </hal>
+-->
     <hal format="hidl">
         <name>android.hardware.camera.provider</name>
-        <transport>hwbinder</transport>
+        <transport arch="32+64">passthrough</transport>
         <version>2.4</version>
         <interface>
             <name>ICameraProvider</name>
